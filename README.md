@@ -8,7 +8,7 @@ This is a Flask API to create todos.  No persitance storage is used.  Once the s
 
 * Install the dependencies
     ```
-    $pipenv install
+    $ pipenv install
     ```
 
 * Start a PIPENV shell
@@ -21,7 +21,7 @@ This is a Flask API to create todos.  No persitance storage is used.  Once the s
     ```
 * Run the API
     ```
-    $ flask run
+    $ python app.py
     ```
 
 ## Using the API's endpoints
