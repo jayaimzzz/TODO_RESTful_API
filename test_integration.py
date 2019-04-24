@@ -55,6 +55,12 @@ def test_app_GET_todo_success():
     assert 'completed_date' not in dict_   
     assert dict_['title'] == 'testing'
 
+def test_app_get_todo_failure():
+    result = client.get('/todos/2')
+    data = result.data.decode()
+    assert result.status_code == 404
+    assert 'Todo 2 does not exist' in data
+
 def test_app_PUT_todo_success():
     result = client.put('/todos/1', data=dict(
         completed=True

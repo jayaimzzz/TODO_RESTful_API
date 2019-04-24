@@ -10,7 +10,7 @@ id = 0 #initalizing counter for a new todo's self generated id
 
 def abort_if_todo_doesnt_exist(todo_id):
     if todo_id not in todos:
-        abort(404, message=f"Todo {todo_id} does not exisit")
+        abort(404, message=f"Todo {todo_id} does not exist")
 
 parser = reqparse.RequestParser()
 parser.add_argument('title', type=str, help='title of the todo')
