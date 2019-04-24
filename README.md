@@ -29,7 +29,7 @@ This is a Flask API to create todos.  No persitance storage is used.  Once the s
 ### GET '/todos'
 
 * Returns all the todos
-    ex.
+```
     {
         "1": {
             "title": "Write README.MD",
@@ -46,17 +46,20 @@ This is a Flask API to create todos.  No persitance storage is used.  Once the s
             "completed": false
         }
     }
+```
 
 ### POST '/todos'
 
 * Creates a todo
 * args:
+```
     title (string, required): the task needing to be todone
     due_date (string, eg. "MM/DD/YYYY", optional): the due date of the task
+```
 
 ### GET '/todos/<TODO_ID>'
 
-* Returns one TODO.  If invalid TODO_ID is provided, 404 error is return
+* Returns one TODO.  If invalid TODO_ID is provided, 404 error is returned.
 
 ### DELETE '/todos/<TODO_ID>'
 
@@ -64,12 +67,12 @@ This is a Flask API to create todos.  No persitance storage is used.  Once the s
 
 ### PUT '/todos/<TODO_ID>'
 
-* Updates a todo.  If invalid TODO_ID is provided, 404 error is return.  
+* Updates a todo.  If invalid TODO_ID is provided, 404 error is returned.  
 
 ```
 $ curl http://localhost:5000/todos/1 -d "completed=True" -X PUT -v
 ```
-
+```
     {
         "1": {
             "title": "Write README.MD",
@@ -87,4 +90,4 @@ $ curl http://localhost:5000/todos/1 -d "completed=True" -X PUT -v
             "completed": false
         }
     }
-
+```
