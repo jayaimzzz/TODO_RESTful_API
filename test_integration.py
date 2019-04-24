@@ -21,6 +21,14 @@ def test_app_POST_todo_success():
     assert 'completed_date' not in dict_ 
     assert dict_['title'] == 'testing'
 
+def test_app_POST_todo_failure():
+    result = client.post('/todos', data=dict(
+        due_date='11/12/2019'
+    ))
+    data = result.data.decode()
+    assert result.status_code == 404
+    assert 'title is required' in data
+
 def test_app_GET_todolist_success():
     result = client.get('/todos')
     data = result.data.decode()
