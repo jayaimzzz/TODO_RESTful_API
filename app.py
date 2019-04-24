@@ -50,8 +50,11 @@ class TodoList(Resource):
 
     def post(self):
         global id
-        id += 1
         args = parser.parse_args()
+        if args.get('title'):
+            id += 1
+        else:
+            return "title is required", 404
         todo_id = str(id)
         current_time = datetime.datetime.now()
         date_string = f"{current_time.month}/{current_time.day}/{current_time.year}"
